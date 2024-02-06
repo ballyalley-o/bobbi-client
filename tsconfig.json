@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "Node",
+    "lib": ["dom", "dom.iterable", "ESNext"],
+    "target": "ESNext",
+    "module": "ESNext",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "baseUrl": "./src",
+    "paths": {
+      "@*": ["./*"]
+    },
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "noResolve": false,
+    "jsx": "preserve",
+    "incremental": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true
+  },
+  "tsc-alias": {
+    "verbose": false,
+    "resolveFullPaths": true,
+    "fileExtensions": {
+      "inputGlob": "{js,jsx,mjs}",
+      "outputCheck": ["js", "json", "jsx", "mjs"]
+    }
+  },
+  "include": ["**/*.ts", "**/*.js"],
+  "exclude": ["node_modules"]
+}
