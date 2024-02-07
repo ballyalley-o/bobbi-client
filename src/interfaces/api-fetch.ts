@@ -9,6 +9,4 @@ export interface IApiFetch {
 export interface IApiFetchAction {
   type: ActionType.apifetch
   payload: IApiFetch[]
-  //   EXPERIMENTAL
-  [key: string]: any
 }
