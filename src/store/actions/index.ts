@@ -1,8 +1,8 @@
 import axios from 'axios'
 import { Dispatch } from 'redux'
 import { GLOBAL } from '@config'
-import { ActionType } from '@constants/enum'
-import { IApiFetch, IApiFetchAction } from '@interfaces/api-fetch'
+import { ActionType } from '../../constants/enum'
+import { IApiFetch, IApiFetchAction } from '../../interfaces/api-fetch'
 
 export const fetchApi = () => {
   return async (dispatch: Dispatch) => {
