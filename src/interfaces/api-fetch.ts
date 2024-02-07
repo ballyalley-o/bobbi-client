@@ -1,4 +1,4 @@
-import { ActionType } from '@constants/enum'
+import { ActionType } from 'constants/enum'
 
 export interface IApiFetch {
   id: number
