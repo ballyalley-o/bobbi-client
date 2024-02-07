@@ -1,10 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware, Reducer } from 'redux'
 import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 import { App } from './components'
+import { IApiFetchAction } from './interfaces/api-fetch'
+// Update the type of the state in the reducers object
 import { reducers } from './store/reducers'
+
+// const store = createStore<
+//   RootState,
+//   IApiFetchAction,
+//   Partial<{ fetchApi: never }>
+// >(reducers, applyMiddleware(thunk))
 
 const store = createStore(reducers, applyMiddleware(thunk))
 
