@@ -9,4 +9,5 @@ export interface IApiFetch {
 export interface IApiFetchAction {
   type: ActionType.apifetch
   payload: IApiFetch[]
+  // [key: string]: any
 }
