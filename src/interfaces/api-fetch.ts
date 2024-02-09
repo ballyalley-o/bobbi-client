@@ -11,3 +11,9 @@ export interface IApiFetchAction {
   payload: IApiFetch[]
   // [key: string]: any
 }
+
+export interface IApiDeleteAction {
+  type: ActionType.apiDelete
+  payload: number
+  // [key: string]: any
+}
