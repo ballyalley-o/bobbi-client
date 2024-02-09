@@ -6,7 +6,7 @@ import { IApiFetch, IApiFetchAction } from '../../interfaces/api-fetch'
 
 export const fetchApi = () => {
   return async (dispatch: Dispatch) => {
-    const response = await axios.get<IApiFetch[]>(GLOBAL.API_MOCK || '')
+    const response = await axios.get<IApiFetch[]>(GLOBAL.API_MOCK(5) || '')
 
     dispatch<IApiFetchAction>({
       type: ActionType.apifetch,
