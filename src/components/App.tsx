@@ -8,12 +8,33 @@ import { IApp } from '@interfaces/component'
 import { fetchApi } from '../store/actions'
 
 class _App extends Component<IApp> {
-  componentDidMount(): void {
+  onButtonClick = (): void => {
     this.props.fetchApi()
   }
 
+  renderList(): JSX.Element[] {
+    return this.props.fetchApiData.map((api: IApiFetch) => {
+      return (
+        <div key={api.id} style={{ marginTop: '2em', marginBottom: '2em' }}>
+          {api.title}
+        </div>
+      )
+    })
+  }
+
   render() {
-    return <h1>Bobbi Client</h1>
+    return (
+      <div>
+        <button onClick={this.onButtonClick}>Fetch Api</button>
+        <div
+          style={{
+            fontFamily: 'monospace',
+          }}
+        >
+          <h3>{this.renderList()}</h3>
+        </div>
+      </div>
+    )
   }
 }
 
