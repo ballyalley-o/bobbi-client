@@ -5,18 +5,23 @@ import { IApiFetch } from '@interfaces/api-fetch'
 import { IStoreState } from '@interfaces/store'
 import { IApp } from '@interfaces/component'
 // @reducers
-import { fetchApi } from '../store/actions'
+import { fetchApi, deleteApi } from '../store/actions'
 
 class _App extends Component<IApp> {
   onButtonClick = (): void => {
     this.props.fetchApi()
   }
 
+  onDeleteClick = (id: number): void => {
+    this.props.deleteApi(id)
+  }
+
   renderList(): JSX.Element[] {
     return this.props.fetchApiData.map((api: IApiFetch) => {
       return (
         <div key={api.id} style={{ marginTop: '2em', marginBottom: '2em' }}>
-          {api.title}
+          <button onClick={() => this.onDeleteClick(api.id)}> ❌ </button>
+          &nbsp;{api.title}
         </div>
       )
     })
@@ -44,4 +49,4 @@ const mapStateToApp = ({
   return { fetchApiData }
 }
 
-export const App = connect(mapStateToApp, { fetchApi })(_App)
+export const App = connect(mapStateToApp, { fetchApi, deleteApi })(_App)
